@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class FinanceService {
+export class ExpenseService {
 
-  getMoney(){
+  getExpense(){
     return 'hello'
   };
 }
