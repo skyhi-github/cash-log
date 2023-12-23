@@ -5,6 +5,7 @@
 
 **Step 1**
 *Create 💾 **MySql** schema **cash-log***
+
 📋 `CREATE SCHEMA cash_log;`
 
 **Step 2**
