@@ -1,11 +1,22 @@
 import { Module } from '@nestjs/common';
-import { IncomeModule } from './modules/income/income.module';
-import { ExpenseModule } from './modules/expense/expense.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { join } from 'path';
 import { BudgetModule } from './modules/budget/budget.module';
-import { CategoryModule } from './modules/category/category.module';
 
 @Module({
-  imports: [IncomeModule, ExpenseModule, BudgetModule, CategoryModule]
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'manozaga0',
+      database: 'cash-log',
+      entities: [join(__dirname, '**/**.entity{.ts,.js}')],
+      synchronize: false,
+    }),
+    BudgetModule,
+  ],
 })
 
 export class MainModule {}

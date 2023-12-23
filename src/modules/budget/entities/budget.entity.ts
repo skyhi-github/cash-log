@@ -10,6 +10,10 @@ export class Budget extends BaseEntity {
   name!: string;
 
   @Index()
+  @Column({ type: 'varchar', length: 255, nullable: false })
+  description?: string;
+
+  @Index()
   @Column({ type: 'decimal', nullable: false })
   amount!: number;
   
